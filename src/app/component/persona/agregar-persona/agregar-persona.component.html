@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-1">Nombre</p>
+        <input type="text" id="txt_nombre" class="form-control mb-2" [(ngModel)]="nuevaPersona.nombre" name="nombre" required />
+  
+        <p class="mb-1">Apellido Paterno</p>
+        <input type="text" id="txt_apellidoPaterno" class="form-control mb-2" [(ngModel)]="nuevaPersona.apellidoPaterno" name="apellidoPaterno" required />
+  
+        <p class="mb-1">Apellido Materno</p>
+        <input type="text" id="txt_apellidoMaterno" class="form-control mb-2" [(ngModel)]="nuevaPersona.apellidoMaterno" name="apellidoMaterno" required />
+  
+        <p class="mb-1">Edad</p>
+        <input type="number" id="txt_edad" class="form-control mb-3" [(ngModel)]="nuevaPersona.edad" name="edad" required />
+  
+        <button class="btn btn-primary" (click)="agregarPersona()">Agregar Persona</button>
+      </div>
+    </div>
+  </div>
+  

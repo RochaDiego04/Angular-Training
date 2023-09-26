@@ -1,0 +1,16 @@
+<h1>Ejemplo NGModel</h1>
+
+<!-- 
+    Manda a llamar a la variable "mensaje" de Ts desde el html 
+-->
+<label>{{mensaje}}</label>
+<br>
+<!---->
+<p>Ejemplo de sincronizacion de variable</p>
+<input type="text" [(ngModel)]="mensaje"/>
+<br>
+<br>
+<a href="">Principal</a>
+<br>
+<br>
+<button id="btnMensaje" (click)="btnMensaje_Click()">Mensaje</button>

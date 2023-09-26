@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="mb-1">Nombre</p>
+            <input type="text" id="txt_nombre" [(ngModel)]="paramPersona.nombre" class="form-control mb-2"/>
+
+            <p class="mb-1">Apellido Paterno</p>
+            <input type="text" id="txt_apellidoPaterno" [(ngModel)]="paramPersona.apellidoPaterno" class="form-control mb-2"/>
+
+            <p class="mb-1">Apellido Materno</p>
+            <input type="text" id="txt_apellidoMaterno" [(ngModel)]="paramPersona.apellidoMaterno" class="form-control mb-2"/>
+
+            <p class="mb-1">Edad</p>
+            <input type="number" id="txt_edad" [(ngModel)]="paramPersona.edad" class="form-control mb-3"/>
+
+            <button (click)="guardarCambios();" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+    </div>
+</div>
+

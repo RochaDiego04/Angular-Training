@@ -1,0 +1,37 @@
+<h1>{{titulo}}</h1>
+<p>tres works! Using for</p> <br>
+
+<ul>
+    <li *ngFor="let numero of numeros; index as i">
+        {{i}} .- {{numero}}
+    </li>
+</ul>
+
+<table>
+    <tr>
+        <td *ngFor="let numero of numeros; index as i">
+            {{numero}}
+        </td>
+    </tr>
+    <tr>
+        <td>Indice</td>
+        <td>Valor</td>
+    </tr>
+    <tr *ngFor="let numero of numeros; index as i; trackBy: trackByFn">
+        <td>
+            {{i}}
+        </td>
+        <td id="tdValor">
+            {{numero}}
+        </td>
+        <td>
+            <button id="btnMensaje" (click)="btnMensaje_Click(numero, i);" class="btn btn-primary">Mensaje</button>
+            <button id="btnModificar" (click)="btnModificar_Click(i);"  class="btn btn-primary">Modificar</button>
+            <input type="text" id="txt_Modificar" [(ngModel)]="numeros[i]" *ngIf="mostrar[i]" />
+            <button id="btnEliminar" class="btn btn-danger" (click)="btnEliminar_Click(i, numero)">Eliminar</button>
+        </td>
+    </tr>
+</table>
+
+
+<a href="">Principal</a>
