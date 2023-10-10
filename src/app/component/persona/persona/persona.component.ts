@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Persona } from '../../../models/persona/persona.model';
+import { Persona } from '../../../models/persona.model';
 
 @Component({
   selector: 'app-persona',

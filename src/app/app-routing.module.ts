@@ -10,7 +10,6 @@ import { PersonaComponent } from './component/persona/persona/persona.component'
 //Aqui se crean las redirecciones
 const routes: Routes = [
   //Muestra el principal en caso de que path venga vacio o no exista
-  {path:'', component: PrincipalComponent},
   {path: 'ejemplo/uno', component: UnoComponent},
   {path: 'ejemplo/dos', component: DosComponent},
   {path: 'ejemplo/tres', component: TresComponent},
