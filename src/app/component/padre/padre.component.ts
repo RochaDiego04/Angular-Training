@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeticionesService } from 'src/app/services/peticiones.service';
+import { Mensaje } from 'src/app/models/mensaje.model';
 import { Login } from 'src/app/models/login/login.model';
+import { EventosService } from 'src/app/services/eventos.service';
 
 @Component({
   selector: 'app-padre',
@@ -13,7 +15,7 @@ export class PadreComponent implements OnInit{
   contrasenia: string;
   mostrarHijo: boolean;
 
-  constructor(private peticionesService: PeticionesService){
+  constructor(private peticionesService: PeticionesService, private eventoService: EventosService){
     this.valorGet = "";
     this.valor = ""; //Esta variable almacena lo que el usuario ingrese desde el input de "padre.component.html"
     this.contrasenia = "";
@@ -44,28 +46,31 @@ export class PadreComponent implements OnInit{
   }
 
   public peticionGet(){
-    //Obtener el usuario de local storage
+    debugger
+    let mensaje = new Mensaje();
+    mensaje.mensaje = "Peticion get";
+    mensaje.tipo = "success";
+    this.eventoService.mostrarMensaje.next(mensaje);
+
     let usuarioStr = localStorage.getItem("usuario");
 
-    if (usuarioStr){
-      //Convertir a objeto tipo Login
-      let usu = JSON.parse(usuarioStr) as Login ;
-      console.log("usuario recuperado: ", usu);
+    if (usuarioStr != null) {
+      let usu = JSON.parse(usuarioStr) as Login;
+      console.log("mi usuario recuperado", usu);
     }
 
-    alert("Mi valor: " + usuarioStr);
-
-    this.peticionesService.GetDatos(this.valorGet).subscribe({
-      next:(dato) => {
-        if (dato.ok){
-          alert("Respuesta: " + dato.datos);
-        } 
-      },
-      error:(error)=>{
-        console.log("Error: "+error);
-      }
-    });
-    console.log("continua");
+    // alert("Mi valor:" + usuarioStr);
+    // this.servicio.GetDatos(this.valorGet).subscribe({
+    //   next: (dato) => {
+    //     if (dato.ok) {
+    //       alert(dato.datos);
+    //     }
+    //   },
+    //   error: (error) => {
+    //     console.log("error:", error);
+    //   }
+    // });
+    // console.log("continua");
   }
 
   public btnMostrar_Click(){

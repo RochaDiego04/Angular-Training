@@ -7,7 +7,7 @@ import { TresComponent } from './component/tres/tres.component';
 import { PadreComponent } from './component/padre/padre.component';
 import { PersonaComponent } from './component/persona/persona/persona.component';
 
-//Aqui se crean las redirecciones
+
 const routes: Routes = [
   //Muestra el principal en caso de que path venga vacio o no exista
   {path: 'ejemplo/uno', component: UnoComponent},
